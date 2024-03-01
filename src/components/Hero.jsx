@@ -3,16 +3,20 @@ import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 
 const skillsIcons = [
   {
-    img: "https://skillicons.dev/icons?i=html,css",
+    img: "https://skillicons.dev/icons?i=html,css,js",
     id: 1,
   },
   {
-    img: "https://skillicons.dev/icons?i=js,react",
+    img: "https://skillicons.dev/icons?i=bootstrap,tailwind",
     id: 2,
   },
   {
-    img: "https://skillicons.dev/icons?i=figma,ai",
+    img: "https://skillicons.dev/icons?i=react,nextjs",
     id: 3,
+  },
+  {
+    img: "https://skillicons.dev/icons?i=figma,ai",
+    id: 4,
   },
 
 ];
