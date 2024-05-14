@@ -1,15 +1,25 @@
-import Home from "./Page/Home";
-import ReactGA4 from 'react-ga4';
-
+import React from 'react';
+import Home from './Page/Home';
+import ConsentBanner from './components/ConsentBanner';
+import { Helmet } from 'react-helmet';
 
 function App() {
-  ReactGA4.init('G-5XYY30EH3Q'); // Initialize with your GA4 property ID
-  ReactGA4.pageview(window.location.pathname + window.location.search);
-
   return (
     <div className="App">
+      <Helmet>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P38WCJQR4Y"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P38WCJQR4Y');
+          `}
+        </script>
+      </Helmet>
       <Home />
-      <script type="text/javascript" src="https://app.termly.io/resource-blocker/5696ec9c-bd94-427c-9b4e-673bb11bc4d2?autoBlock=on"></script>
+      <ConsentBanner />
     </div>
   );
 }
