@@ -10,7 +10,7 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.JPEG'
+import portraitImage from '@/images/portrait.jpg'
 import SplitText from '@/TextAnimations/SplitText/SplitText'
 import TextPressure from '@/TextAnimations/TextPressure/TextPressure'
 import CircularText from '@/TextAnimations/CircularText/CircularText'
@@ -30,9 +30,10 @@ function SocialLink({
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        prefetch
+        className="group flex text-sm font-semibold text-zinc-800 transition hover:text-[#22C55E] dark:text-zinc-200 dark:hover:text-[#22C55E]"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-[#22C55E]" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -74,7 +75,7 @@ export default function About() {
                 text=" This * is * </OUSHI33R> *"
                 onHover="speedUp"
                 spinDuration={20}
-                className="text-zinc-800 dark:text-zinc-100 uppercase"
+                className="uppercase text-zinc-800 dark:text-zinc-100"
               />
             </div>
           </div>
@@ -107,9 +108,9 @@ export default function About() {
             </p>
             <p>
               I thrive on continuous learning, innovation, and staying ahead of
-              trends. Whether it's refining UI/UX with Figma or developing
+              trends. Whether it’s refining UI/UX with Figma or developing
               seamless mobile experiences with React Native, I believe in
-              pushing the boundaries of what's possible in web development.
+              pushing the boundaries of what’s possible in web development.
             </p>
             <p>
               Today, I’m the founder of Planetaria, where we’re working on
@@ -125,7 +126,7 @@ export default function About() {
               width={true}
               weight={true}
               italic={true}
-              textColor="#ffffff"
+              textColor="#22C55E"
               strokeColor="#000000"
               minFontSize={50}
               className="font-bold text-zinc-800 dark:text-zinc-100"
@@ -134,24 +135,33 @@ export default function About() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={TwitterIcon}>
-              Follow on Twitter
-            </SocialLink>
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-              Follow on Instagram
-            </SocialLink>
-            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
-              Follow on GitHub
-            </SocialLink>
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            <SocialLink
+              href="https://www.linkedin.com/in/aelhakim-ouchiar/"
+              icon={LinkedInIcon}
+              className="mt-4"
+            >
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
-              href="mailto:spencer@planetaria.tech"
+              href="https://www.instagram.com/oushiiar33/"
+              icon={InstagramIcon}
+              className="mt-4"
+            >
+              Follow on Instagram
+            </SocialLink>
+            <SocialLink
+              href="https://github.com/OUSHI33R"
+              icon={GitHubIcon}
+              className="mt-4"
+            >
+              Follow on GitHub
+            </SocialLink>
+            <SocialLink
+              href="mailto:ouchiar.abdelhakim@gmail.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              spencer@planetaria.tech
+              ouchiar.abdelhakim@gmail.com
             </SocialLink>
           </ul>
         </div>

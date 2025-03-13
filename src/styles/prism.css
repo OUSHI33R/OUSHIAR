@@ -46,8 +46,6 @@ pre[class*='language-'] {
   color: theme('colors.zinc.400');
 }
 
-
-
 html {
   scroll-behavior: unset;
 }

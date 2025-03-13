@@ -66,14 +66,15 @@ export function SelectedProjects() {
   return (
     <section className=" px-6 py-16 text-gray-900  dark:text-white">
       <div className="mx-auto max-w-5xl">
-        <h2 className="mb-2 text-sm font-semibold uppercase text-green-600 dark:text-green-400">
+        <h2 className="mb-2 text-left text-sm font-semibold uppercase text-green-600 dark:text-green-400">
           My Work
         </h2>
-        <h1 className="mb-4 text-4xl font-bold">Selected Projects</h1>
-        <p className="mb-12 text-gray-600 dark:text-gray-400">
-          Here's a curated selection showcasing my expertise and the achieved
+        <h1 className="mb-4 text-left text-4xl font-bold">Selected Projects</h1>
+        <p className="mb-12 text-left text-gray-600 dark:text-gray-400">
+          Here&apos;s a curated selection showcasing my expertise and the achieved
           results.
         </p>
+
         <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
           {projects.map((project, index) => (
             <ProjectCard

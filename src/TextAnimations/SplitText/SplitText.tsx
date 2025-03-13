@@ -1,11 +1,8 @@
-/*
-	jsrepo 1.41.3
-	Installed from https://reactbits.dev/ts/tailwind/
-	05-03-2025
-*/
 'use client'
 
-import { useSprings, animated, SpringConfig } from '@react-spring/web'
+import type React from 'react'
+
+import { useSprings, animated, type SpringConfig } from '@react-spring/web'
 import { useEffect, useRef, useState } from 'react'
 
 interface SplitTextProps {
@@ -59,12 +56,18 @@ const SplitText: React.FC<SplitTextProps> = ({
     return () => observer.disconnect()
   }, [threshold, rootMargin])
 
+  // Reset the animated count when the text changes
+  useEffect(() => {
+    animatedCount.current = 0
+  }, [text])
+
   const springs = useSprings(
     letters.length,
-    letters.map((_, i) => ({
-      from: animationFrom,
-      to: inView
-        ? async (next: (props: any) => Promise<void>) => {
+    letters.map((_, i) => {
+      return {
+        from: animationFrom,
+        to: async (next: (arg0: { opacity: number; transform: string }) => any) => {
+          if (inView) {
             await next(animationTo)
             animatedCount.current += 1
             if (
@@ -73,11 +76,14 @@ const SplitText: React.FC<SplitTextProps> = ({
             ) {
               onLetterAnimationComplete()
             }
+          } else {
+            await next(animationFrom)
           }
-        : animationFrom,
-      delay: i * delay,
-      config: { easing },
-    })),
+        },
+        delay: i * delay,
+        config: { easing },
+      }
+    }),
   )
 
   return (
@@ -99,7 +105,7 @@ const SplitText: React.FC<SplitTextProps> = ({
             return (
               <animated.span
                 key={index}
-                style={springs[index] as unknown as React.CSSProperties}
+                style={springs[index]}
                 className="inline-block transform transition-opacity will-change-transform"
               >
                 {letter}

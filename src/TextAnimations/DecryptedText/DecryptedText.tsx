@@ -1,8 +1,3 @@
-/*
-	jsrepo 1.41.3
-	Installed from https://reactbits.dev/ts/tailwind/
-	05-03-2025
-*/
 'use client'
 import { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
@@ -44,7 +39,7 @@ export default function DecryptedText({
   const containerRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    let interval: number
+    let interval: ReturnType<typeof setInterval>
     let currentIteration = 0
 
     const getNextIndex = (revealedSet: Set<number>): number => {

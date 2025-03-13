@@ -45,21 +45,21 @@ export function AnimatedTestimonialsDemo() {
       quote:
         'Building high-performance, responsive websites that provide seamless experiences across all devices. I focus on writing clean, scalable code using modern technologies like Next.js, React, and Tailwind CSS.',
       designation: '💻',
-      src: 'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      src: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       name: 'UI/UX Design',
       quote:
         'Creating user-centric designs that enhance engagement and usability. I specialize in wireframing, prototyping, and crafting intuitive interfaces that align with both brand identity and user expectations.',
       designation: '🎨',
-      src: 'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      src: 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       name: 'Branding',
       quote:
         'Developing strong brand identities that communicate values and resonate with audiences. From logo design to full visual identity systems, I ensure consistency across all touchpoints.',
       designation: '🚀',
-      src: 'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      src: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
   ]
   return <AnimatedTestimonials testimonials={expertise} />
@@ -79,7 +79,7 @@ export function ExpertiseSection() {
                 </span>
                 Speciality
               </span>
-              <h2 className="text-5xl font-bold tracking-tight text-white">
+              <h2 className="text-5xl font-bold tracking-tight">
                 Areas of Expertise
               </h2>
             </div>

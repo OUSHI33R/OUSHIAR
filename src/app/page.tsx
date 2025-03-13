@@ -15,19 +15,12 @@ import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
-import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
-import BlurText from '@/TextAnimations/BlurText/BlurText'
 import ScrollingWords from '@/components/scrolled'
 import DecryptedText from '@/TextAnimations/DecryptedText/DecryptedText'
-import ScrollReveal from '@/TextAnimations/ScrollReveal/ScrollReveal'
-import GradientText from '@/TextAnimations/GradientText/GradientText'
 import { Github, Instagram, Linkedin, Mail, Twitter } from 'lucide-react'
-import ShinyText from '@/TextAnimations/ShinyText/ShinyText'
-import { ArrowUpRight, ExternalLink } from 'lucide-react'
-import { useState } from 'react'
 import { SelectedProjects } from '@/components/mywork'
 import { ExpertiseSection } from '@/components/Speciality'
+import CTASection from '@/components/CTASection'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -245,8 +238,6 @@ function Resume() {
 }
 
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
-
   return (
     <>
       <Container className="mt-9">
@@ -289,20 +280,14 @@ export default async function Home() {
         </div> */}
         <div className="w-full py-20">
           <div className="mb-8 flex items-center">
-            <span className="mr-2 text-[#a3e635]">👋</span>
-            <ShinyText
-              text="Salam! Ana Web Developer & UI/UX Designer."
-              disabled={true}
-              speed={1}
-              className=""
-            />
+            <span className="mr-2 text-green-500">
+              👋 Salam! Ana Web Developer & UI/UX Designer.
+            </span>
           </div>
           <h1 className="text-7xl font-bold uppercase leading-tight">
-            Building <span className="text-[#a3e635]">Digital</span> <br />
-            experiences{' '}
-            <span className="text-white">
-              with a Moroccan touch that stand out.
-            </span>{' '}
+            Building <span className="text-green-500">Digital Experiences</span>{' '}
+            <br />{' '}
+            <span className="">with a Moroccan touch that stand out.</span>{' '}
           </h1>
           <div className="ml-auto mt-8 grid max-w-full grid-cols-4 items-center gap-4">
             <div className="col-span-2 flex justify-center border-t-2 border-[rgba(160,226,61,0.38)]" />
@@ -375,30 +360,35 @@ export default async function Home() {
       <ScrollingWords />
       <Container className="mx-auto mt-24 max-w-full text-center md:mt-28">
         {/* About Me Section */}
-        <div className="flex flex-col items-center gap-2">
-          <GradientText
-            colors={['#40ffaa', '#4079ff', '#40ffaa', '#4079ff', '#40ffaa']}
-            animationSpeed={3}
-            showBorder={false}
-            className="flex items-center gap-2 text-sm font-semibold"
-          >
-            ✦ ABOUT ME
-          </GradientText>
-          <ScrollReveal
-            baseOpacity={0}
-            enableBlur={true}
-            baseRotation={5}
-            blurStrength={10}
-            textClassName="text-5xl font-semibold  text-zinc-400 sm:text-3xl"
-          >
-            I'm Devraj Chatribin, with over 4+ years of experience in design &
-            development. With a strong focus on producing high-quality &
-            impactful digital experiences, I have worked with some of the most
-            innovative industry leaders to help build their top-notch products.
-          </ScrollReveal>
-        </div>
+        <section className="mx-auto max-w-5xl px-4 py-20 md:px-8">
+          <div className="flex flex-col items-center gap-6 text-center">
+            {/* Static heading */}
+            <div className="relative">
+              <h2 className="flex items-center gap-2 text-sm font-semibold tracking-wider text-emerald-500 dark:text-emerald-400">
+                <span className="text-lg">✦</span> ABOUT ME
+              </h2>
+            </div>
+
+            {/* Bio text without animation */}
+            <p className="max-w-3xl text-2xl font-semibold text-zinc-700 dark:text-zinc-300 md:text-3xl lg:text-4xl">
+              I&apos;m Devraj Chatribin, with over 4+ years of experience in
+              design & development. With a strong focus on producing
+              high-quality & impactful digital experiences, I have worked with
+              some of the most innovative industry leaders to help build their
+              top-notch products.
+            </p>
+
+            {/* Decorative elements */}
+            <div className="mt-8 flex gap-2">
+              <span className="h-1 w-1 rounded-full bg-emerald-400"></span>
+              <span className="h-1 w-1 rounded-full bg-blue-500"></span>
+              <span className="h-1 w-1 rounded-full bg-emerald-400"></span>
+            </div>
+          </div>
+        </section>
         <SelectedProjects />
         <ExpertiseSection />
+        <CTASection />
       </Container>
     </>
   )
